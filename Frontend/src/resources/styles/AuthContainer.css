@@ -1,0 +1,243 @@
+/* src/styles/auth.css */
+@import "./colour-pallette.css";
+
+html, body, #root {
+  height: 100%;
+  background: var(--background);
+  color: var(--bold-text);
+  font-family: var(--main-font);
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--main-font);
+}
+.auth-page {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  padding: 2rem;
+}
+
+.auth-card {
+  width: 420px;
+  max-width: 100%;
+  background: var(--color-primary);
+  border: 1px solid var(--color-secondary);
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.35);
+  padding: 2rem 2.25rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-title {
+  color: var(--color-primary-text);
+  font-size: 1.6rem;
+  margin: 0 0 1.25rem 0;
+  text-align: center;
+  letter-spacing: .5px;
+}
+
+.switcher {
+  position: relative;
+  background: var(--color-secondary);
+  border-radius: 12px;
+  padding: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 1.5rem;
+}
+
+.switcher button {
+  position: relative;
+  z-index: 2;
+  border: 0;
+  background: transparent;
+  color: var(--bold-text);
+  padding: .65rem 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color .25s;
+}
+
+.switcher button[data-active="true"] {
+  color: var(--bold-text);
+}
+
+.switcher .slider {
+  position: absolute;
+  z-index: 1;
+  top: 4px;
+  bottom: 4px;
+  width: calc(50% - 8px);
+  background: var(--color-highlights);
+  border-radius: 8px;
+  transition: transform .35s cubic-bezier(.4, 0, .2, 1);
+  will-change: transform;
+}
+
+.forms-viewport {
+  overflow: hidden;
+  width: 100%;
+  min-height: 310px;
+  transition: height .35s ease;
+}
+
+.forms-track {
+  display: flex;
+  width: 200%;
+  transition: transform .45s cubic-bezier(.4, 0, .2, 1);
+  will-change: transform;
+}
+
+.form {
+  width: 50%;
+  padding-right: 1rem;
+}
+
+.form:last-child {
+  padding-right: 0;
+  padding-left: 1rem;
+}
+
+.form fieldset {
+  border: 0;
+  padding: 0;
+}
+
+.form label {
+  display: block;
+  font-size: .85rem;
+  color: var(--color-text);
+  margin-bottom: .35rem;
+}
+
+.form input {
+  width: 96%;
+  background: #1a1d1f;
+  border: 1px solid var(--color-secondary);
+  border-radius: 8px;
+  padding: .75rem .9rem;
+  color: var(--bold-text);
+  outline: none;
+  transition: border .2s, box-shadow .2s;
+}
+
+.form input:focus {
+  border-color: var(--color-highlights);
+  box-shadow: 0 0 0 2px rgba(97,137,47,.15);
+}
+
+.form .row {
+  margin-bottom: 1rem;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 0.75rem;
+  background: var(--color-primary-text);
+  color: #000;
+  border: 0;
+  border-radius: 10px;
+  padding: .85rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s;
+}
+
+.submit-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(144,230,23,.1);
+}
+
+.helper {
+  margin-top: .9rem;
+  font-size: .85rem;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.helper a {
+  color: var(--color-primary-text);
+  text-decoration: none;
+}
+
+.helper a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- MOBILE RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .auth-card {
+    width: 95%;
+    padding: 1.5rem 1.5rem 2rem;
+    border-radius: 14px;
+  }
+
+  .auth-title {
+    font-size: 1.4rem;
+  }
+
+  .switcher button {
+    font-size: 0.9rem;
+    padding: 0.6rem 0;
+  }
+
+  .form input {
+    font-size: 0.9rem;
+    padding: 0.65rem 0.8rem;
+    width: 96%;
+  }
+
+  .submit-btn {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-page {
+    padding: 1rem;
+  }
+
+  .auth-card {
+    width: 100%;
+    padding: 1rem 1rem 1.5rem;
+    border-radius: 12px;
+  }
+
+  .auth-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .switcher {
+    margin-bottom: 1rem;
+    padding: 3px;
+  }
+
+  .switcher button {
+    font-size: 0.85rem;
+    padding: 0.5rem 0;
+  }
+
+  .form {
+    padding: 0;
+  }
+
+  .form input {
+    padding: 0.6rem 0.7rem;
+    font-size: 0.85rem;
+    width: 93%;
+  }
+
+  .submit-btn {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+
+  .helper {
+    font-size: 0.8rem;
+  }
+}

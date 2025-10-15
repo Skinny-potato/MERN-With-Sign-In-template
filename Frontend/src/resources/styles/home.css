@@ -1,0 +1,43 @@
+@import '../styles/colour-pallette.css';
+
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background);
+    padding: 2rem;
+    text-align: center;
+}
+
+.home-content {
+    max-width: 600px;
+    color: var(--color-text);
+}
+
+.home-title {
+    font-size: 3rem;
+    color: var(--color-primary-text);
+    margin-bottom: 1rem;
+}
+
+.home-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text);
+    margin-bottom: 2rem;
+}
+
+.get-started-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    background-color: var(--color-highlights);
+    color: var(--bold-text);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.get-started-button:hover {
+    background-color: var(--color-secondary);
+}

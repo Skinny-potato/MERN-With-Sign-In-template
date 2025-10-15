@@ -1,0 +1,15 @@
+/* colour-pallette.css */
+:root {
+  /* Colors */
+  --color-primary: #222629; /* Black */
+  --color-secondary: #474b4f; /* Grey */
+  --color-primary-text: #90e617; /* Light green - headings & subheadings */
+  --color-highlights: #61892f; /* Olive green - highlights */
+  --color-text: #6b6e70; /* Light grey */
+  --bold-text: #ffffff; /* Bold text for strong elements */
+  --background: #111; /* Page background */
+
+  /* Font */
+  /* --main-font: "Open Sans", Arial, sans-serif; Main body font */
+  --main-font: "Montserrat", sans-serif; /* Main font */
+}
