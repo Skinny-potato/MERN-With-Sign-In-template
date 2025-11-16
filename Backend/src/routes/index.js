@@ -1,7 +1,9 @@
 import authRoutes from './auth.route.js';
+import AfterLoggedIn from './afterLogin.route.js';
 
 export const routeManagement = (app) => {
   app.use('/api/auth', authRoutes);
+  app.use('/api/after-login', AfterLoggedIn);
 
   // Catch-all 404 - Match all routes that weren't matched earlier
   app.use((req, res) => {

@@ -1,5 +1,5 @@
 import { User } from '../models/userModel.js';
-import { generateToken } from '../utils/tokenGeneration.js';
+import { generateRefreshToken, generateToken } from '../utils/tokenGeneration.js';
 import { sendEmail } from '../services/email.service.js';
 import crypto from 'crypto';
 
@@ -27,7 +27,11 @@ export const login = async (req, res) => {
     }
 
     const token = generateToken(user._id);
-    res.json({ token, username: user.name });
+    const refreshToken = generateRefreshToken(user);
+
+    user.refreshToken = refreshToken;
+    await user.save();
+    res.json({ token, refreshToken, username: user.name });
   } catch {
     res.status(500).json({ message: 'Login failed' });
   }

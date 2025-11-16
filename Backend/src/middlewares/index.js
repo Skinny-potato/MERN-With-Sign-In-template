@@ -1,6 +1,5 @@
 import { loggerMiddleware as logger } from "./Logger/logger.js"
 import bodyParser from 'body-parser';
-import { authMiddleware as auth } from "./Auth/auth.js"
 import expressip  from "express-ip"
 
 export function setupMiddlewares(app) {

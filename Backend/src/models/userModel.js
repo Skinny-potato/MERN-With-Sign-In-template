@@ -19,6 +19,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  refreshToken:String, // Will be added to check if the user has a valdi refresh token 
   resetToken: String,
   resetTokenExpiry: Date 
 });
